@@ -15,7 +15,7 @@ def solution(nums, target):
         if num in D:
             return [idx, D[num]]
         else:
-             D[target-mum] = idx
+             D[target-num] = idx
     
     
     
