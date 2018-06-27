@@ -24,4 +24,4 @@ class Solution:
                  max_len = max(idx-start+1, max_len)
             
             D[item] = idx
-return max_len
+    return max_len
