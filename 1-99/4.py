@@ -35,4 +35,4 @@ class Solution:
         if total_len % 2 == 0:
             return (ret[total_len//2] + ret[total_len//2 - 1])/2.
         else:
-return ret[total_len//2]
+    return ret[total_len//2]
