@@ -14,7 +14,8 @@ class Solution:
         ret = [0]*(num+1)
         
         for i in range(num+1):
-            ret[i] = i%2 + ret[i//2]
+            ret[i] = i%2 + ret[i>>1]
+            #ret[i] = i%2 + ret[i//2]
         return ret
 
 class Solution2:
