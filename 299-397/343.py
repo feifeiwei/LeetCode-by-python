@@ -31,21 +31,44 @@ class Solution:
         p *= n
         
         return p
-    
+   
     ###动态规划
+
+class Solution:
+    def integerBreak(self, n):
+        """
+        :type n: int
+        :rtype: int
+        """
+        if n==2 or n==3:
+            if n == 2:
+                return 1
+            else: 
+                return 2
+        else:
+            if n % 3 == 0:
+                i = n/3
+                res = 3**i
+            elif n % 3 == 1: 
+                i = (n-4)/3
+                res = 4*3**i
+            else:
+                i = (n-2)/3
+                res = 2*3**i
+        return int(res)    
     
-    ##从1 到 n 存储 每一位的最大的乘机和
-    class Solution:
-        def integerBreak(self, n):
-            """
-            :type n: int
-            :rtype: int
-            """
-            dp = [1]*(n+1)
+##从1 到 n 存储 每一位的最大的乘机和
+class Solution:
+    def integerBreak(self, n):
+        """
+        :type n: int
+        :rtype: int
+        """
+        dp = [1]*(n+1)
 
-            for i in range(2, n+1):
-                for j in range(1,i):
+        for i in range(2, n+1):
+            for j in range(1,i):
 
-                    dp[i] = max(dp[i], j*max(i-j, dp[i-j]))
+                dp[i] = max(dp[i], j*max(i-j, dp[i-j]))
 
-            return dp[n]
+        return dp[n]
